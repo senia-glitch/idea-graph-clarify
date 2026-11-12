@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ideagraph-clarify"
+version = "0.1.0"
+description = "Пакет-скилл: уточнение сырой идеи по одному вопросу с вариантами"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.entry-points."ideagraph.packages"]
+clarify = "ideagraph_clarify:manifest"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ideagraph_clarify = ["*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
